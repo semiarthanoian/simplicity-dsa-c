@@ -1,2 +1,3 @@
 # simplicity-dsa-c
+
  A simple C library which implements common data structures ...

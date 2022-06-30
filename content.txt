@@ -1,0 +1,18 @@
+
+   Array
+   List
+   Vector
+   Set
+   Map
+   Object
+   Tree
+
+   Linear
+   Binary
+   Insertion
+   Selection
+   Interpolation
+   Quick
+   Radix
+   Hash
+   Heap
