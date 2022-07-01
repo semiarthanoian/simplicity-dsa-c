@@ -3,9 +3,9 @@
 #include "../index.h"
 
 Array array_new (int capacity)
-   {  Array thearray = malloc (sizeof (array_struct));
-      thearray->at = malloc (capacity * 8);
-      thearray->length = 0;
-      thearray->capacity = capacity;
-      return thearray;
+   {  Array newarray = malloc (sizeof (array_struct));
+      newarray->at = malloc (capacity * 8);
+      newarray->length = 0;
+      newarray->capacity = capacity;
+      return newarray;
    }

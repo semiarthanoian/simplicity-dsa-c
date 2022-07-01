@@ -6,6 +6,7 @@
    Map
    Object
    Tree
+   Graph
 
    Linear
    Binary

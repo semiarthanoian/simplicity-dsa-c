@@ -7,9 +7,9 @@ Array array_from (
    int   length,
    int   capacity
 ) // -
-   {  Array thearray = malloc (sizeof (array_struct));
-      thearray->at = literal;
-      thearray->length = length;
-      thearray->capacity = capacity;
-      return thearray;
+   {  Array newarray = malloc (sizeof (array_struct));
+      newarray->at = literal;
+      newarray->length = length;
+      newarray->capacity = capacity;
+      return newarray;
    }
