@@ -2,12 +2,6 @@
 typedef double val;
 typedef void* ref;
 
-typedef struct {
-   val value;
-} just_struct;
-
-typedef just_struct* Just;
-
 // - Array - - - - - - - - - - - - - - - - -
 
 typedef struct {
@@ -30,24 +24,35 @@ typedef struct item {
    ref            data;
    struct item*   next;
    struct item*   prev;
+} item_struct;
+
+typedef item_struct* Item;
+
+typedef struct {
+   Item head;
+   Item last;
 } list_struct;
 
-typedef  struct item*   Item;
-typedef  list_struct*   List;
+typedef list_struct* List;
 
 // - constructors - - - - - - - -
-Item list_new (ref data);
-List list_from (void* literal);
-// - start - - - - - - - - - - - - - - - -
-void list_push (List thelist, ref data);
-ref  list_pop (List thelist);
-// - end - - - - - - - - - - - - - - - -
+Item item_new (ref data);
+List list_new (ref data);
+List list_from (ref* literal);
+// - destructors - - - - - - - -
+void item_destroy (Item theitem);
+void list_destroy (List thelist);
+// - utility - - - - - - - -
+int  list_length (List thelist);
+// - start - - - - - - - -
 void list_unshift (List thelist, ref data);
 ref  list_shift (List thelist);
-// - between - - - - - - - - - - - - - - - -
-List list_insert (Item prev, ref data);
-ref  list_delete (Item item);
-Array list_splice (Item from, int todelete, int insertsome, ...);
+// - end - - - - - - - -
+void list_push (List thelist, ref data);
+ref  list_pop (List thelist);
+// - between - - - - - - - -
+void list_insert (Item prev, ref data);
+ref  list_delete (List thelist, Item any);
 
 // - Book - - - - - - - - - - - - - - - - -
 
